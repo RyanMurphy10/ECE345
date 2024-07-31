@@ -1,0 +1,73 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red17\green134\blue139;\red255\green255\blue255;\red61\green73\blue78;
+\red131\green148\blue149;\red0\green0\blue0;\red199\green63\blue5;\red52\green62\blue66;\red9\green74\blue76;
+\red96\green126\blue3;}
+{\*\expandedcolortbl;;\cssrgb\c0\c59216\c61569;\cssrgb\c100000\c100000\c100000;\cssrgb\c30588\c35686\c38039;
+\cssrgb\c58431\c64706\c65098;\cssrgb\c0\c0\c0;\cssrgb\c82745\c32941\c0;\cssrgb\c26275\c30980\c32941;\cssrgb\c0\c36078\c37255;
+\cssrgb\c44706\c55686\c0;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl456\partightenfactor0
+
+\f0\fs28 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 unsigned\cf4 \strokec4  \cf2 \strokec2 long\cf4 \strokec4  loopDelay;\cf5 \strokec5  // Declare the global variable
+\f1\fs24 \cf6 \strokec6 \
+\pard\pardeftab720\sl390\partightenfactor0
+\cf6 \cb1 \uc0\u8232 \cb3 \
+\pard\pardeftab720\sl456\partightenfactor0
+
+\f0\fs28 \cf2 \strokec2 void\cf4 \strokec4  \cf7 \strokec7 setup\cf8 \strokec8 ()\cf5 \strokec5  // Initialize digital pins as outputs
+\f1\fs24 \cf6 \strokec6 \
+\pard\pardeftab720\sl456\partightenfactor0
+
+\f0\fs28 \cf8 \strokec8 \{
+\f1\fs24 \cf6 \strokec6 \
+\pard\pardeftab720\sl456\partightenfactor0
+
+\f0\fs28 \cf4 \strokec4 \'a0\'a0\cf7 \strokec7 pinMode\cf8 \strokec8 (\cf9 \strokec9 6\cf4 \strokec4 , OUTPUT\cf8 \strokec8 )\cf4 \strokec4 ;
+\f1\fs24 \cf6 \strokec6 \
+
+\f0\fs28 \cf4 \strokec4 \'a0\'a0\cf7 \strokec7 pinMode\cf8 \strokec8 (\cf9 \strokec9 13\cf4 \strokec4 , OUTPUT\cf8 \strokec8 )\cf4 \strokec4 ;
+\f1\fs24 \cf6 \strokec6 \
+\pard\pardeftab720\sl456\partightenfactor0
+
+\f0\fs28 \cf8 \strokec8 \}
+\f1\fs24 \cf6 \strokec6 \
+\pard\pardeftab720\sl390\partightenfactor0
+\cf6 \
+\pard\pardeftab720\sl456\partightenfactor0
+
+\f0\fs28 \cf2 \strokec2 void\cf4 \strokec4  \cf7 \strokec7 loop\cf8 \strokec8 ()
+\f1\fs24 \cf6 \strokec6 \
+\pard\pardeftab720\sl456\partightenfactor0
+
+\f0\fs28 \cf8 \strokec8 \{
+\f1\fs24 \cf6 \strokec6 \
+\pard\pardeftab720\sl456\partightenfactor0
+
+\f0\fs28 \cf4 \strokec4 \'a0\'a0loopDelay++;\cf5 \strokec5  // Increment the loopDelay counter
+\f1\fs24 \cf6 \strokec6 \
+
+\f0\fs28 \cf4 \strokec4 \'a0\'a0\'a0\'a0\cf10 \strokec10 if\cf4 \strokec4  \cf8 \strokec8 (\cf4 \strokec4 loopDelay > \cf9 \strokec9 40000\cf8 \strokec8 )\cf5 \strokec5  // Check if loopDelay exceeds the threshold
+\f1\fs24 \cf6 \strokec6 \
+
+\f0\fs28 \cf4 \strokec4 \'a0\'a0\'a0\'a0\cf8 \strokec8 \{
+\f1\fs24 \cf6 \strokec6 \
+
+\f0\fs28 \cf4 \strokec4 \'a0\'a0\'a0\'a0loopDelay = \cf9 \strokec9 0\cf4 \strokec4 ;\cf5 \strokec5  // Reset the loopDelay counter\'a0\'a0\'a0\'a0
+\f1\fs24 \cf6 \strokec6 \
+
+\f0\fs28 \cf4 \strokec4 \'a0\'a0\'a0\'a0\cf7 \strokec7 digitalWrite\cf8 \strokec8 (\cf9 \strokec9 13\cf4 \strokec4 , !\cf7 \strokec7 digitalRead\cf8 \strokec8 (\cf9 \strokec9 13\cf8 \strokec8 ))\cf4 \strokec4 ;\cf5 \strokec5  // Toggle the state of pin 13
+\f1\fs24 \cf6 \strokec6 \
+
+\f0\fs28 \cf4 \strokec4 \'a0\'a0\cf8 \strokec8 \}
+\f1\fs24 \cf6 \strokec6 \
+
+\f0\fs28 \cf4 \strokec4 \'a0\'a0\cf7 \strokec7 analogWrite\cf8 \strokec8 (\cf9 \strokec9 6\cf4 \strokec4 , \cf7 \strokec7 analogRead\cf8 \strokec8 (\cf9 \strokec9 0\cf8 \strokec8 )\cf4 \strokec4  / \cf9 \strokec9 4\cf8 \strokec8 )\cf4 \strokec4 ;
+\f1\fs24 \cf6 \strokec6 \
+\pard\pardeftab720\sl456\partightenfactor0
+
+\f0\fs28 \cf8 \strokec8 \}
+\f1\fs24 \cf6 \strokec6 \
+}
